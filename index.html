@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gravity Off</title>
+<style>body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,sans-serif;background:#222;color:#eee;overflow:hidden;text-align:center}
+button{font-size:1.6rem;padding:18px 36px;border:none;border-radius:999px;background:#12b886;color:#fff;cursor:pointer;box-shadow:0 6px 0 rgba(0,0,0,.4);transition:transform .6s}
+#out{font-size:1.4rem;margin:24px 16px;min-height:3em;max-width:600px}.w{display:inline-block;transition:transform 1.2s cubic-bezier(.3,1.6,.5,1)}</style></head><body>
+<h1 id="h"></h1><p id="out"></p><button id="b">Turn off gravity</button>
+<script>const txt=["This is a very normal and serious website.","Nothing will happen if you press the button.","Everything here is perfectly stable.","Please remain calm and grounded."];
+function words(el,s){el.innerHTML=s.split(' ').map(w=>'<span class="w">'+w+'&nbsp;</span>').join('')}words(h,"Welcome to Serious Website™");words(out,txt[0]);let k=0;
+b.onclick=()=>{k++;const off=k%2;if(!off)words(out,txt[(k/2)%txt.length]);document.querySelectorAll('.w').forEach(w=>w.style.transform=off?'translate('+(Math.random()-.5)*innerWidth+'px,'+(Math.random()-.5)*innerHeight+'px) rotate('+(Math.random()*720-360)+'deg)':'none');b.textContent=off?'Turn gravity back on':'Turn off gravity';b.style.transform=off?'rotate('+(Math.random()*40-20)+'deg)':''}</script></body></html>
